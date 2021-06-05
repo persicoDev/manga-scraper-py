@@ -11,9 +11,6 @@ def get_single_volume(link, chioce):
             new_link += '/'
         print(str(new_link))
         soup = BeautifulSoup(requests.get(new_link).content, 'html.parser')
-        file = open('link.txt', 'a')
-        file.write(soup)
-        file.close()
     except:
         print('-errore-')
     volume_choice = int(input('inserisci il numero del volume che si vuole scaricare: '))
