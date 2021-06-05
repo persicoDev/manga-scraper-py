@@ -1,4 +1,6 @@
 from .file_save import file_save
+from bs4 import BeautifulSoup
+import requests
 
 def get_single_page(choice, link):
     soup = BeautifulSoup(requests.get(link).content, 'html.parser')

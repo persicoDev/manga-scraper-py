@@ -1,4 +1,4 @@
-def file_save(manga_container):
+def file_save(soup):
     file = open('link.txt', 'a')
-    file.write(str(manga_container[1]['src']) + "\n")
+    file.write(soup)
     file.close()

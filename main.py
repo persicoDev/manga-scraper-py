@@ -1,9 +1,6 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
-from bs4 import BeautifulSoup
-import requests
-from choices.single_page import get_single_page
-from choices.single_chapter import get_single_chapter
+from choices import single_volume, single_chapter, single_volume
 
 if __name__ == "__main__":
     while True:
@@ -11,9 +8,10 @@ if __name__ == "__main__":
         if choice == 0:
             quit()
         link = str(input('inserisci il link: '))
-        second_choice = int(input('inserisci uno per scaricare una singola pagina, inserisci due per scaricare un capitolo intero 
-        '))
-        if second_choice == 2:
-            get_single_page(link, choice)
-        elif second_choice == 1:
-            get_single_chapter(link, choice)
+        second_choice = int(input('inserisci uno per scaricare una singola pagina, inserisci due per scaricare un capitolo intero, inserisci 3 per scaricare un volume intero: '))
+        if second_choice == 1:
+            single_page.get_single_page(link, choice)
+        elif second_choice == 2:
+            single_chapter.get_single_chapter(link, choice)     
+        elif second_choice == 3:
+            single_volume.get_single_volume(link, choice)

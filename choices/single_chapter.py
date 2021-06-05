@@ -1,10 +1,15 @@
 from .file_save import file_save
+from bs4 import BeautifulSoup
+import requests
 
 def get_single_chapter(link, choice):
-    soup = BeautifulSoup(requests.get(link).content, 'html.parser')
-    manga_container = soup.findAll('img', {"class": "img-fluid"})
-    chapter_index = soup.find("option", {"value": "0"}).text
-    chapter_index = str(chapter_index[2:len(str(chapter_index))])
+    try:
+        soup = BeautifulSoup(requests.get(link).content, 'html.parser')
+        manga_container = soup.find_all('img', {"class": "img-fluid"})
+        chapter_index = soup.find("option", {"value": "0"}).text
+        chapter_index = str(chapter_index[2:len(str(chapter_index))])
+    except:
+        print('error')
     for i in range(int(chapter_index)):
         if i < 10:
             link = link[:-1]
