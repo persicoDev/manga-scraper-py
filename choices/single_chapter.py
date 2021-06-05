@@ -9,7 +9,7 @@ def get_single_chapter(link, choice):
         chapter_index = soup.find("option", {"value": "0"}).text
         chapter_index = str(chapter_index[2:len(str(chapter_index))])
     except:
-        print('error')
+        print('-error-')
     for i in range(int(chapter_index)):
         if i < 10:
             link = link[:-1]
