@@ -21,7 +21,7 @@ def get_single_manga(link, choice):
             link = all_volumes[chapter]['href']
             link += "/1"
             file = open('link.txt', 'a')
-            file.write(str(all_volumes[chapter]['title']) + "\n")
+            file.write(str(new_volume_number) + "\n")
             file.close()
             new_volume_number = new_volume_number -1
             get_single_chapter(link, choice)
