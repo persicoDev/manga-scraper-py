@@ -1,6 +1,6 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
-from .choices import single_page, single_chapter, single_manga
+from choices import single_page, single_chapter, single_manga
 
 if __name__ == "__main__":
     while True:
